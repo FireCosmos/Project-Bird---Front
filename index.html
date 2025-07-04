@@ -240,19 +240,19 @@
       if (loadingMsg) loadingMsg.remove();
     }
 
-    async function sendToBackend(message, threadId) {
-      const response = await fetch('http://localhost:5000/api/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          message: message,
-          thread_id: threadId
-        })
-      });
-      return await response.json();
-    }
+  async function sendToBackend(message, threadId) {
+  const response = await fetch('http://localhost:8080/api/chat', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      message: message,
+      thread_id: threadId
+    })
+  });
+  return await response.json();
+}
   </script>
 </body>
 </html> 
